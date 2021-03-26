@@ -6,7 +6,7 @@ pipeline {
        steps {
          withCredentials([usernamePassword(credentialsId: 'docker_credentials', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
          sh 'docker build . -t omarquraah/nodejsapp:lts'
-         sh 'docker login -u USERNAME -p PASSWORD'
+         sh 'docker login -u $(USERNAME) -p $(PASSWORD) '
          sh 'docker push omarquraah/nodejsapp:lts'
          }
        }
