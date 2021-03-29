@@ -10,6 +10,12 @@ pipeline {
          sh 'docker login -u $username -p $pass '
          sh 'docker push omarquraah/nodejsapp:lts'
          }
+         
+         post {
+           success {
+             slackSend(color: "33FFF3" ,message:"build succeeded)
+           }
+         }
        }
      }
   
