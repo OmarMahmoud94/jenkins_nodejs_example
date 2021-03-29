@@ -13,7 +13,7 @@ pipeline {
          
          post {
            success {
-             slackSend(color: "33FFF3" ,message:"build succeeded)
+             slackSend(color: "33FFF3" , message:"build succeeded")
            }
          }
        }
